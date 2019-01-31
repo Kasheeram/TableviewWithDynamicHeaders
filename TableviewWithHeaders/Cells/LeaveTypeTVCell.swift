@@ -114,7 +114,7 @@ class LeaveTypeTVCell: UITableViewCell {
         
         
         visitingParentButton.topAnchor.constraint(equalTo: topAnchor,constant:1).isActive = true
-        visitingParentButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant:20).isActive = true
+        visitingParentButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant:48).isActive = true
         visitingParentButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
         visitingParentButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         

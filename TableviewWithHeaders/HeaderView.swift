@@ -22,6 +22,8 @@ class HeaderView: UITableViewHeaderFooterView {
     lazy var bgrView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+//        view.addBorder(side: .top, color: UIColor.lightGray, width: 0.5)
+//        view.addBorder(side: .bottom, color: UIColor.lightGray, width: 0.5)
         view.backgroundColor = .white
         return view
     }()
@@ -40,10 +42,22 @@ class HeaderView: UITableViewHeaderFooterView {
         return image
     }()
     
+    lazy var numberLabel:UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1"
+        label.textAlignment = .center
+        label.textColor = .white
+        label.layer.cornerRadius = 13
+        label.clipsToBounds = true
+        label.backgroundColor = UIColor(red: 0/255, green: 180/255, blue: 226/255, alpha: 1.0)
+        return label
+    }()
+    
     let titleLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont.sfDisplayBold(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.numberOfLines = 0
         label.textAlignment = .left
         return label
@@ -63,9 +77,9 @@ class HeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
 
         self.addSubview(bgrView)
-        bgrView.addSubview(headerView)
-        headerView.addSubview(arrowImage)
-        headerView.addSubview(titleLabel)
+//        bgrView.addSubview(headerView)
+        bgrView.addSubview(numberLabel)
+        bgrView.addSubview(titleLabel)
         bgrView.addSubview(sicknessButton)
         
         
@@ -74,23 +88,23 @@ class HeaderView: UITableViewHeaderFooterView {
         bgrView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         bgrView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        headerView.topAnchor.constraint(equalTo: bgrView.topAnchor).isActive = true
-        headerView.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor).isActive = true
-        headerView.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor).isActive = true
-        headerView.heightAnchor.constraint(equalToConstant: 45).isActive = true
+//        headerView.topAnchor.constraint(equalTo: bgrView.topAnchor).isActive = true
+//        headerView.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor).isActive = true
+//        headerView.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor).isActive = true
+//        headerView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
-        arrowImage.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 10).isActive = true
-        arrowImage.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 10).isActive = true
-        arrowImage.widthAnchor.constraint(equalToConstant: 18).isActive = true
-        arrowImage.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        numberLabel.topAnchor.constraint(equalTo: bgrView.topAnchor, constant: 10).isActive = true
+        numberLabel.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor, constant: 10).isActive = true
+        numberLabel.widthAnchor.constraint(equalToConstant: 26).isActive = true
+        numberLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor,constant:6).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: arrowImage.trailingAnchor, constant: 10).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -5).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: bgrView.topAnchor,constant:8).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: numberLabel.trailingAnchor, constant: 12).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor, constant: -5).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
 //        titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        sicknessButton.topAnchor.constraint(equalTo: headerView.bottomAnchor,constant:10).isActive = true
+        sicknessButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant:10).isActive = true
         sicknessButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         sicknessButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
         sickButtonHeight = NSLayoutConstraint(item: sicknessButton.self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
@@ -132,4 +146,36 @@ class HeaderView: UITableViewHeaderFooterView {
         
     }
     
+}
+
+public enum BorderSide {
+    case top, bottom, left, right
+}
+
+extension UIView {
+    public func addBorder(side: BorderSide, color: UIColor, width: CGFloat) {
+        let border = UIView()
+        border.translatesAutoresizingMaskIntoConstraints = false
+        border.backgroundColor = color
+        self.addSubview(border)
+        
+        let topConstraint = topAnchor.constraint(equalTo: border.topAnchor)
+        let rightConstraint = trailingAnchor.constraint(equalTo: border.trailingAnchor)
+        let bottomConstraint = bottomAnchor.constraint(equalTo: border.bottomAnchor)
+        let leftConstraint = leadingAnchor.constraint(equalTo: border.leadingAnchor)
+        let heightConstraint = border.heightAnchor.constraint(equalToConstant: width)
+        let widthConstraint = border.widthAnchor.constraint(equalToConstant: width)
+        
+        
+        switch side {
+        case .top:
+            NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, heightConstraint])
+        case .right:
+            NSLayoutConstraint.activate([topConstraint, rightConstraint, bottomConstraint, widthConstraint])
+        case .bottom:
+            NSLayoutConstraint.activate([rightConstraint, bottomConstraint, leftConstraint, heightConstraint])
+        case .left:
+            NSLayoutConstraint.activate([bottomConstraint, leftConstraint, topConstraint, widthConstraint])
+        }
+    }
 }

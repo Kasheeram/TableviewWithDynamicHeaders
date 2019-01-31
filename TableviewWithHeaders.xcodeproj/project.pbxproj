@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8939258A2202D57300D79E5E /* ReasonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893925892202D57300D79E5E /* ReasonHeader.swift */; };
+		8939258C2202D5B600D79E5E /* ContactHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939258B2202D5B600D79E5E /* ContactHeader.swift */; };
+		8939258E2202D5D400D79E5E /* ApproverHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939258D2202D5D400D79E5E /* ApproverHeader.swift */; };
+		893925902202D86E00D79E5E /* ReasonTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939258F2202D86E00D79E5E /* ReasonTVCell.swift */; };
+		893925962202DE9500D79E5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893925952202DE9500D79E5E /* MainViewController.swift */; };
+		893925982202E12D00D79E5E /* SecondHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893925972202E12D00D79E5E /* SecondHeader.swift */; };
+		8939259A2202E14000D79E5E /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893925992202E14000D79E5E /* SecondTableViewCell.swift */; };
+		8939259C2202FDAE00D79E5E /* LeaveTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939259B2202FDAE00D79E5E /* LeaveTypeViewController.swift */; };
+		8939259E22030C6F00D79E5E /* RegularLeaveTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8939259D22030C6F00D79E5E /* RegularLeaveTVCell.swift */; };
 		896B87982201786700F0FC18 /* LeaveDatesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B87972201786700F0FC18 /* LeaveDatesTVCell.swift */; };
-		896B879A2201789900F0FC18 /* OutpassTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B87992201789900F0FC18 /* OutpassTVCell.swift */; };
 		896B879C220178B900F0FC18 /* ContactDetailsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B879B220178B900F0FC18 /* ContactDetailsTVCell.swift */; };
 		896B879E220178E700F0FC18 /* ApproverNoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B879D220178E700F0FC18 /* ApproverNoteTVCell.swift */; };
 		896B87A42201996F00F0FC18 /* DatesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896B87A32201996F00F0FC18 /* DatesHeader.swift */; };
@@ -44,8 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		893925892202D57300D79E5E /* ReasonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonHeader.swift; sourceTree = "<group>"; };
+		8939258B2202D5B600D79E5E /* ContactHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactHeader.swift; sourceTree = "<group>"; };
+		8939258D2202D5D400D79E5E /* ApproverHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproverHeader.swift; sourceTree = "<group>"; };
+		8939258F2202D86E00D79E5E /* ReasonTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonTVCell.swift; sourceTree = "<group>"; };
+		893925952202DE9500D79E5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		893925972202E12D00D79E5E /* SecondHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHeader.swift; sourceTree = "<group>"; };
+		893925992202E14000D79E5E /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		8939259B2202FDAE00D79E5E /* LeaveTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveTypeViewController.swift; sourceTree = "<group>"; };
+		8939259D22030C6F00D79E5E /* RegularLeaveTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularLeaveTVCell.swift; sourceTree = "<group>"; };
 		896B87972201786700F0FC18 /* LeaveDatesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveDatesTVCell.swift; sourceTree = "<group>"; };
-		896B87992201789900F0FC18 /* OutpassTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutpassTVCell.swift; sourceTree = "<group>"; };
 		896B879B220178B900F0FC18 /* ContactDetailsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTVCell.swift; sourceTree = "<group>"; };
 		896B879D220178E700F0FC18 /* ApproverNoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproverNoteTVCell.swift; sourceTree = "<group>"; };
 		896B87A32201996F00F0FC18 /* DatesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesHeader.swift; sourceTree = "<group>"; };
@@ -100,9 +116,10 @@
 				89CBDB1721FF177600ECC350 /* SelectedLeaveTypeTVCell.swift */,
 				89CBDB1521FF0CBB00ECC350 /* LeaveTypeTVCell.swift */,
 				896B87972201786700F0FC18 /* LeaveDatesTVCell.swift */,
-				896B87992201789900F0FC18 /* OutpassTVCell.swift */,
+				8939258F2202D86E00D79E5E /* ReasonTVCell.swift */,
 				896B879B220178B900F0FC18 /* ContactDetailsTVCell.swift */,
 				896B879D220178E700F0FC18 /* ApproverNoteTVCell.swift */,
+				8939259D22030C6F00D79E5E /* RegularLeaveTVCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -131,16 +148,23 @@
 			isa = PBXGroup;
 			children = (
 				89CBDAE221FEC80200ECC350 /* AppDelegate.swift */,
+				896B87A52201AD4300F0FC18 /* Commons.swift */,
 				89CBDAE421FEC80200ECC350 /* ViewController.swift */,
+				893925952202DE9500D79E5E /* MainViewController.swift */,
 				89CBDB1321FEEE2200ECC350 /* HeaderView.swift */,
 				896B87A32201996F00F0FC18 /* DatesHeader.swift */,
-				896B87A52201AD4300F0FC18 /* Commons.swift */,
+				893925892202D57300D79E5E /* ReasonHeader.swift */,
+				8939258B2202D5B600D79E5E /* ContactHeader.swift */,
+				8939258D2202D5D400D79E5E /* ApproverHeader.swift */,
 				896B87A02201791400F0FC18 /* Cells */,
 				89CBDAE621FEC80200ECC350 /* Main.storyboard */,
 				89CBDAEC21FEC80900ECC350 /* Assets.xcassets */,
 				89CBDAEE21FEC80900ECC350 /* LaunchScreen.storyboard */,
 				89CBDAF121FEC80900ECC350 /* Info.plist */,
 				89CBDAE921FEC80200ECC350 /* TableviewWithHeaders.xcdatamodeld */,
+				893925972202E12D00D79E5E /* SecondHeader.swift */,
+				893925992202E14000D79E5E /* SecondTableViewCell.swift */,
+				8939259B2202FDAE00D79E5E /* LeaveTypeViewController.swift */,
 			);
 			path = TableviewWithHeaders;
 			sourceTree = "<group>";
@@ -294,18 +318,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8939259E22030C6F00D79E5E /* RegularLeaveTVCell.swift in Sources */,
+				8939258A2202D57300D79E5E /* ReasonHeader.swift in Sources */,
 				896B87982201786700F0FC18 /* LeaveDatesTVCell.swift in Sources */,
 				89CBDB1821FF177600ECC350 /* SelectedLeaveTypeTVCell.swift in Sources */,
+				8939258C2202D5B600D79E5E /* ContactHeader.swift in Sources */,
 				89CBDB1621FF0CBB00ECC350 /* LeaveTypeTVCell.swift in Sources */,
+				8939259A2202E14000D79E5E /* SecondTableViewCell.swift in Sources */,
 				89CBDAE521FEC80200ECC350 /* ViewController.swift in Sources */,
 				896B87A62201AD4400F0FC18 /* Commons.swift in Sources */,
+				893925982202E12D00D79E5E /* SecondHeader.swift in Sources */,
+				893925962202DE9500D79E5E /* MainViewController.swift in Sources */,
 				89CBDB1421FEEE2200ECC350 /* HeaderView.swift in Sources */,
 				896B879C220178B900F0FC18 /* ContactDetailsTVCell.swift in Sources */,
 				89CBDAE321FEC80200ECC350 /* AppDelegate.swift in Sources */,
 				89CBDAEB21FEC80200ECC350 /* TableviewWithHeaders.xcdatamodeld in Sources */,
 				896B879E220178E700F0FC18 /* ApproverNoteTVCell.swift in Sources */,
-				896B879A2201789900F0FC18 /* OutpassTVCell.swift in Sources */,
+				8939258E2202D5D400D79E5E /* ApproverHeader.swift in Sources */,
 				896B87A42201996F00F0FC18 /* DatesHeader.swift in Sources */,
+				8939259C2202FDAE00D79E5E /* LeaveTypeViewController.swift in Sources */,
+				893925902202D86E00D79E5E /* ReasonTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

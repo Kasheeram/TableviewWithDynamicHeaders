@@ -1,23 +1,24 @@
 //
-//  DatesHeader.swift
+//  ContactHeader.swift
 //  TableviewWithHeaders
 //
-//  Created by kashee on 30/01/19.
+//  Created by kashee on 31/01/19.
 //  Copyright © 2019 kashee. All rights reserved.
 //
 
 import UIKit
 
-protocol DatesHeaderViewDelegate: class {
-    func DatetoggleSection(header: DatesHeader, section: Int)
+protocol ContactHeaderViewDelegate: class {
+    func contactToggleSection(header: ContactHeader, section: Int)
 }
 
-class DatesHeader: UITableViewHeaderFooterView {
 
-    weak var delegate: DatesHeaderViewDelegate?
+class ContactHeader: UITableViewHeaderFooterView {
+
+    weak var delegate: ContactHeaderViewDelegate?
     var section: Int = 0
     
-    var heightForDatesTextView:NSLayoutConstraint?
+    var heightforReasonTxtView:NSLayoutConstraint?
     
     lazy var bgrView: UIView = {
         let view = UIView()
@@ -43,7 +44,7 @@ class DatesHeader: UITableViewHeaderFooterView {
     lazy var numberLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "2"
+        label.text = "4"
         label.textAlignment = .center
         label.textColor = .white
         label.layer.cornerRadius = 13
@@ -61,7 +62,7 @@ class DatesHeader: UITableViewHeaderFooterView {
         return label
     }()
     
-    let dateTextView:UITextView = {
+    let reasonTextView:UITextView = {
         let textView = UITextView()
         textView.isScrollEnabled = false
         textView.isEditable = false
@@ -79,22 +80,15 @@ class DatesHeader: UITableViewHeaderFooterView {
     }
     
     func setupView(){
-        
         addSubview(bgrView)
-//        bgrView.addSubview(headerView)
         bgrView.addSubview(numberLabel)
         bgrView.addSubview(titleLabel)
-        bgrView.addSubview(dateTextView)
+        bgrView.addSubview(reasonTextView)
         
         bgrView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         bgrView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         bgrView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         bgrView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-//        headerView.topAnchor.constraint(equalTo: bgrView.topAnchor).isActive = true
-//        headerView.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor).isActive = true
-//        headerView.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor).isActive = true
-//        headerView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
         numberLabel.topAnchor.constraint(equalTo: bgrView.topAnchor, constant: 10).isActive = true
         numberLabel.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor, constant: 10).isActive = true
@@ -107,19 +101,19 @@ class DatesHeader: UITableViewHeaderFooterView {
         titleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         // titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        dateTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        dateTextView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        dateTextView.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor,constant:-10).isActive = true
-        heightForDatesTextView = NSLayoutConstraint(item: dateTextView.self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
-        NSLayoutConstraint.activate([heightForDatesTextView!])
-//        dateTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
-        dateTextView.bottomAnchor.constraint(equalTo: bgrView.bottomAnchor, constant: -10).isActive = true
+        reasonTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        reasonTextView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        reasonTextView.trailingAnchor.constraint(equalTo: bgrView.trailingAnchor,constant:-10).isActive = true
+        heightforReasonTxtView = NSLayoutConstraint(item: reasonTextView.self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+        NSLayoutConstraint.activate([heightforReasonTxtView!])
+        //        dateTextView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        reasonTextView.bottomAnchor.constraint(equalTo: bgrView.bottomAnchor, constant: -10).isActive = true
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
     
     @objc private func didTapHeader() {
-        delegate?.DatetoggleSection(header: self, section: section)
+        delegate?.contactToggleSection(header: self, section: section)
     }
-    
+
 }
