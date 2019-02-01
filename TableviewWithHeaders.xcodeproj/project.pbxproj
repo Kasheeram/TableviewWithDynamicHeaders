@@ -110,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8918B33822040D9F0020759A /* Second Patern */ = {
+			isa = PBXGroup;
+			children = (
+				893925952202DE9500D79E5E /* MainViewController.swift */,
+				893925972202E12D00D79E5E /* SecondHeader.swift */,
+				893925992202E14000D79E5E /* SecondTableViewCell.swift */,
+				8939259B2202FDAE00D79E5E /* LeaveTypeViewController.swift */,
+			);
+			path = "Second Patern";
+			sourceTree = "<group>";
+		};
 		896B87A02201791400F0FC18 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +161,7 @@
 				89CBDAE221FEC80200ECC350 /* AppDelegate.swift */,
 				896B87A52201AD4300F0FC18 /* Commons.swift */,
 				89CBDAE421FEC80200ECC350 /* ViewController.swift */,
-				893925952202DE9500D79E5E /* MainViewController.swift */,
+				8918B33822040D9F0020759A /* Second Patern */,
 				89CBDB1321FEEE2200ECC350 /* HeaderView.swift */,
 				896B87A32201996F00F0FC18 /* DatesHeader.swift */,
 				893925892202D57300D79E5E /* ReasonHeader.swift */,
@@ -162,9 +173,6 @@
 				89CBDAEE21FEC80900ECC350 /* LaunchScreen.storyboard */,
 				89CBDAF121FEC80900ECC350 /* Info.plist */,
 				89CBDAE921FEC80200ECC350 /* TableviewWithHeaders.xcdatamodeld */,
-				893925972202E12D00D79E5E /* SecondHeader.swift */,
-				893925992202E14000D79E5E /* SecondTableViewCell.swift */,
-				8939259B2202FDAE00D79E5E /* LeaveTypeViewController.swift */,
 			);
 			path = TableviewWithHeaders;
 			sourceTree = "<group>";

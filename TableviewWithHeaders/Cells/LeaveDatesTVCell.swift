@@ -12,8 +12,9 @@ class LeaveDatesTVCell: UITableViewCell {
 
     let basicButton:UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 22
-        button.setTitle( "Basic", for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitle( "Today\n15 jun'19", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         button.setButtonProperties(borderColor: Colors.selectedBdrClr, backgroundColor: Colors.selectedbgrClr, titleColor: Colors.whiteTextRGB)
         button.tag = 101
 //        button.addTarget(self, action: #selector(AddComplaintViewController.didSelectUrgency), for: .touchUpInside)
@@ -23,8 +24,9 @@ class LeaveDatesTVCell: UITableViewCell {
     
     let mediumsButton:UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 22
-        button.setTitle( "Medium", for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitle( "Tomorrow\n16 jun'19", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         button.setButtonProperties(borderColor: Colors.unSelectedBdrClr, backgroundColor: Colors.unSelectedbgrClr, titleColor: Colors.headerRGB)
         button.tag = 102
 //        button.addTarget(self, action: #selector(AddComplaintViewController.didSelectUrgency), for: .touchUpInside)
@@ -34,8 +36,9 @@ class LeaveDatesTVCell: UITableViewCell {
     
     let criticalButton:UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 22
-        button.setTitle( "Critical", for: .normal)
+        button.layer.cornerRadius = 5
+        button.setTitle( "Day After\n17 jun'19", for: .normal)
+        button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         button.setButtonProperties(borderColor: Colors.unSelectedBdrClr, backgroundColor: Colors.unSelectedbgrClr, titleColor: Colors.headerRGB)
         button.tag = 103
 //        button.addTarget(self, action: #selector(AddComplaintViewController.didSelectUrgency), for: .touchUpInside)
@@ -102,7 +105,8 @@ class LeaveDatesTVCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), for: .normal)
-        button.layer.cornerRadius = 23
+        button.layer.cornerRadius = 5
+        button.backgroundColor = UIColor(red: 0/255, green: 184/255, blue: 223/255, alpha: 1.0)
         button.clipsToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         //        button.addTarget(self, action: #selector(didSubmitButtonTapped), for: .touchUpInside)
@@ -130,10 +134,10 @@ class LeaveDatesTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        nextButton.setDiagonalBackGroundGradient(colorOne: UIColor.init(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0), colorTwo: UIColor.init(red: 2.0 / 255.0, green: 220.0 / 255.0, blue: 193.0 / 255.0, alpha: 1.0))
-        super.layoutSubviews()
-    }
+//    override func layoutSubviews() {
+//        nextButton.setDiagonalBackGroundGradient(colorOne: UIColor.init(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0), colorTwo: UIColor.init(red: 2.0 / 255.0, green: 220.0 / 255.0, blue: 193.0 / 255.0, alpha: 1.0))
+//        super.layoutSubviews()
+//    }
     
     func setupView(){
         addSubview(informToParentLabel)
@@ -152,9 +156,9 @@ class LeaveDatesTVCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             buttonStackView.topAnchor.constraint(equalTo: topAnchor,constant:1),
-            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant:20),
-            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant:-20),
-            buttonStackView.heightAnchor.constraint(equalToConstant: 44)
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor,constant:48),
+            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor,constant:-10),
+            buttonStackView.heightAnchor.constraint(equalToConstant: 46)
             ])
         
         informToParentLabel.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor,constant:20).isActive = true
@@ -169,7 +173,7 @@ class LeaveDatesTVCell: UITableViewCell {
         
         outTimeLabel.topAnchor.constraint(equalTo: informToParentLabel.bottomAnchor, constant: 20).isActive = true
         outTimeLabel.leadingAnchor.constraint(equalTo: informToParentLabel.leadingAnchor).isActive = true
-        outTimeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.43).isActive = true
+        outTimeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.40).isActive = true
         outTimeLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         inTimeLabel.topAnchor.constraint(equalTo: outTimeLabel.topAnchor).isActive = true
@@ -188,7 +192,7 @@ class LeaveDatesTVCell: UITableViewCell {
         inTimeTextField.heightAnchor.constraint(equalTo: outTimeTextField.heightAnchor).isActive = true
         
         nextButton.topAnchor.constraint(equalTo: inTimeTextField.bottomAnchor, constant: 20).isActive = true
-        nextButton.leadingAnchor.constraint(equalTo: outTimeTextField.leadingAnchor, constant: 20).isActive = true
+        nextButton.leadingAnchor.constraint(equalTo: outTimeTextField.leadingAnchor, constant: 30).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: 158).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 46).isActive = true
         
@@ -215,7 +219,7 @@ extension UIButton {
         self.setTitleColor(titleColor, for: .normal)
         self.backgroundColor = backgroundColor
         self.clipsToBounds = true
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         self.layer.borderWidth = 1.0
         self.layer.borderColor = borderColor.cgColor
     }

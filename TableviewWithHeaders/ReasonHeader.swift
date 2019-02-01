@@ -46,7 +46,8 @@ class ReasonHeader: UITableViewHeaderFooterView {
         label.text = "3"
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.cornerRadius = 13
+        label.layer.cornerRadius = 10
+        label.font = UIFont.systemFont(ofSize: 11)
         label.clipsToBounds = true
         label.backgroundColor = UIColor(red: 0/255, green: 180/255, blue: 226/255, alpha: 1.0)
         return label
@@ -55,7 +56,7 @@ class ReasonHeader: UITableViewHeaderFooterView {
     let titleLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         label.textAlignment = .left
         return label
@@ -97,10 +98,10 @@ class ReasonHeader: UITableViewHeaderFooterView {
         bgrView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         bgrView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        numberLabel.topAnchor.constraint(equalTo: bgrView.topAnchor, constant: 10).isActive = true
+        numberLabel.topAnchor.constraint(equalTo: bgrView.topAnchor, constant: 12).isActive = true
         numberLabel.leadingAnchor.constraint(equalTo: bgrView.leadingAnchor, constant: 10).isActive = true
-        numberLabel.widthAnchor.constraint(equalToConstant: 26).isActive = true
-        numberLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        numberLabel.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        numberLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         titleLabel.topAnchor.constraint(equalTo: bgrView.topAnchor,constant:8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: numberLabel.trailingAnchor, constant: 12).isActive = true

@@ -71,7 +71,8 @@ class LeaveTypeTVCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), for: .normal)
-        button.layer.cornerRadius = 23
+        button.layer.cornerRadius = 5
+        button.backgroundColor = UIColor(red: 0/255, green: 184/255, blue: 223/255, alpha: 1.0)
         button.clipsToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
 //        button.addTarget(self, action: #selector(didSubmitButtonTapped), for: .touchUpInside)
@@ -99,10 +100,10 @@ class LeaveTypeTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-         nextButton.setDiagonalBackGroundGradient(colorOne: UIColor.init(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0), colorTwo: UIColor.init(red: 2.0 / 255.0, green: 220.0 / 255.0, blue: 193.0 / 255.0, alpha: 1.0))
-        super.layoutSubviews()
-    }
+//    override func layoutSubviews() {
+//         nextButton.setDiagonalBackGroundGradient(colorOne: UIColor.init(red: 0.0 / 255.0, green: 180.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0), colorTwo: UIColor.init(red: 2.0 / 255.0, green: 220.0 / 255.0, blue: 193.0 / 255.0, alpha: 1.0))
+//        super.layoutSubviews()
+//    }
     
     func setupView(){
         addSubview(visitingParentButton)
